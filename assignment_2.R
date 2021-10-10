@@ -33,5 +33,7 @@ summary_stats_top_neighborhoods <-
 highest_avg_square_ft <- c(max(summary_stats_top_neighborhoods$avg_square_feet,na.rm = T))
 print(highest_avg_square_ft)
 #2 f
-second_avg_price <- c(summary_stats_top_neighborhoods$avg_square_feet[2])
+summary_stats_top_neighborhoods <- summary_stats_top_neighborhoods %>%
+  arrange(desc(avg_price))
+second_avg_price <- c(summary_stats_top_neighborhoods$avg_price[2])
 print(second_avg_price)
